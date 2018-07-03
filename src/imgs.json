@@ -1,0 +1,12 @@
+[
+    {
+        "id": 1,
+        "img": "./img/img1.jpg",
+        "clicked": false
+    },
+    {
+        "id": 2,
+        "img": "./img/img2.jpg",
+        "clicked": false
+    }
+]
