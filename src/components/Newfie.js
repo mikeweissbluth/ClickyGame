@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-// import { Card, CardImg } from 'reactstrap';
 
+//we need to create a newfie image property
 
 class Newfie extends Component {
+  handleClick= (e) => {
+    console.log(e.target.id);
+  }
   render() {
     return (
       <div className="Newfie"> 
-      <img src= ""/>
+      <img 
+        src= { this.props.photo} 
+        onClick={this.handleClick} 
+        id={this.props.id}
+      />
       </div>
     );
   }
