@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
 import Game from './Game.js';
-import images from '../imgs.json'
+import NewfieContainer from './NewfieContainer.js';
 
 //render the actual UI of the game. Does this by rendering the game component. Calculate the score and send the info to 'gamecomponent' to be displayed.
 
 class GameContainer extends Component {
   // write out the state object
   state = {
-    selected: []
+    selected: [],
+    score: 0,
   }
-//when this function is called it will change the state to add the currently selected image to the state
 
-  imageSelected=(imageID) => {
-    let currentlySelected=this.state.selected;
-    currentlySelected.push(imageID);
-    this.setState({
-      selected: currentlySelected
-    })
+
+  increaseScore=() => {
+     //add 1 to score
+     this.setState({
+       score: this.state.score + 1
+     });
+     console.log("score increased by one")
   }
 
   render() {
     return (
       <div className="GameContainer"> 
       GameContainer
-      <Game />
+      <Game printScore= {this.state.score}/>
+      <NewfieContainer increasescore={this.increaseScore} />
       </div>
     );
   }
